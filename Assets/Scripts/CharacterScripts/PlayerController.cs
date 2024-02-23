@@ -6,7 +6,6 @@ using DG.Tweening;
 public class PlayerController : MonoBehaviour
 {
     #region fields
-    //public Collider playerCollider;
     [SerializeField] public GameObject characterColliderObject;
     [SerializeField] public Collider characterCollider;
     [SerializeField] public Rigidbody rb;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterInputManager : MonoBehaviour
 {
     private int _inputId;
-    public bool isInteracting;
+    //public bool isInteracting;
     public static CharacterInputManager Instance { get; private set; }
 
     private void Awake()

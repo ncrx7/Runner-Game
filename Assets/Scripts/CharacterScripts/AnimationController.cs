@@ -36,11 +36,11 @@ public class AnimationController : MonoBehaviour
     {
         return animator.GetBool("isInteracting");
     }
-    private void OnAnimatorMove()
+/*     private void OnAnimatorMove()
     {
          if (CharacterInputManager.Instance.isInteracting == false)
         {
             return;
         } 
-    }
+    } */
 }

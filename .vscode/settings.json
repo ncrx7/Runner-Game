@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "Runner (Velo).sln"
+    "dotnet.defaultSolution": "Runner-Game.sln"
 }

@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     /*     [SerializeField] private float leanAmount = 0.5f; // Eğilme miktarı
         [SerializeField] private float leanDuration = 5f; */
     public float laneDistance = 5f;
+    public float groundThreshold = 0.1f;
+    private bool isGrounded = false;
     #endregion
 
     #region mb call back methods
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         EventSystem.OnPressedSwipeKey -= HandleCharacterMechanim;
     }
-
+ 
     private void OnTriggerEnter(Collider other)
     {
         IInteractable interactable;
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if (!AnimationController.Instance.GetIsInteracting())
+                    if (!AnimationController.Instance.GetIsInteracting() && CheckIsGrounded())
                     {
                         Jump();
                     }
@@ -114,6 +116,20 @@ public class PlayerController : MonoBehaviour
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         AnimationController.Instance.PlayTargetAnimation("Jumping", true);
+    }
+
+    private bool CheckIsGrounded()
+    {
+        if (characterCollider != null && Physics.Raycast(transform.position, Vector3.down, groundThreshold))
+        {
+            isGrounded = true;
+            return isGrounded;
+        }
+        else
+        {
+            isGrounded = false;
+            return isGrounded;
+        }
     }
 
     public void Slide()

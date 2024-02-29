@@ -24,7 +24,7 @@ public class SwordMove : MonoBehaviour
 
     private void MoveSwordVerticalBack()
     {
-        Vector3 dir = -transform.forward * 5 * Time.fixedDeltaTime;
+        Vector3 dir = -transform.forward * 3 * Time.fixedDeltaTime;
         //Debug.Log("dir: " + dir);
         transform.Translate(dir);
     }
